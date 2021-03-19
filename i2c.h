@@ -32,11 +32,12 @@
 #define RxACK (1 << 7UL) // 1 is no acknowledge received, other is acknowledge received.
 /**
  * I2C is busy status.
- * 1 is detected after START signal.
- * 0 is detected after STOP signal.
+ * When busy detected after START signal, bit is set.
+ * When busy detected after STOP signal, bit is reset.
  */
 #define BUSY (1 << 6UL)
 #define ARBITRATION_LOST (1 << 5UL)
+
 /**
  * When transfering data, bit is set.
  * When transfer complete, bit is reset.
