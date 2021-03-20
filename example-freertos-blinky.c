@@ -41,6 +41,9 @@
 #include "task.h"
 #include "queue.h"
 
+/* Include semaphore and mutex function */
+#include "semphr.h"
+
 /* Freedom metal includes. */
 #include <metal/machine.h>
 #include <metal/machine/platform.h>

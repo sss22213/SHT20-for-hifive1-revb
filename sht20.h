@@ -7,6 +7,8 @@
 #include "FreeRTOS.h"
 #include "task.h"
 #include "queue.h"
+#include "i2c.h" 
+
 #define I2C_BAUDRATE 100000
 
 struct temperature_huminty{
@@ -18,8 +20,8 @@ struct sht20{
     /* Declare i2c pin */
     int i2c_number;
 
-    /* Structure of i2c */
-    struct metal_i2c *i2c;
+    /* I2c register */
+    struct i2c_reg *i2c_register;
 
     /* Frequency of read */
     int read_frequency;
@@ -32,6 +34,6 @@ struct sht20{
 QueueHandle_t xQueue_sht20;
 
 /* Configure hardware of sht20 and space of store */
-sht20 *sht20_init(int);
+struct sht20 *sht20_init(int);
 
 #endif
